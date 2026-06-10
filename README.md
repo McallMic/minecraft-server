@@ -25,8 +25,13 @@ Initialize the infrastructure:
 terraform -chdir=terraform init
 terraform -chdir=terraform apply -var="key_name=vockey"
 ```
+Note the public IP from the output and update ansible/inventory.ini with it:
 
-Keep the public IP from the output and update ansible/inventory.ini with it, then configure the server:
+```bash
+nano ansible/inventory.ini
+```
+
+Then configure the server:
 
 ```bash
 ansible-playbook -i ansible/inventory.ini ansible/playbook.yml
